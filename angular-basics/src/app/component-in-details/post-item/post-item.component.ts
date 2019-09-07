@@ -1,13 +1,19 @@
 import {
   AfterContentChecked,
-  AfterContentInit, AfterViewChecked, AfterViewInit,
+  AfterContentInit,
+  AfterViewChecked,
+  AfterViewInit,
+  ChangeDetectionStrategy,
   Component,
   ContentChild,
   DoCheck,
-  ElementRef, EventEmitter,
+  ElementRef,
+  EventEmitter,
   Input,
-  OnChanges, OnDestroy,
-  OnInit, Output,
+  OnChanges,
+  OnDestroy,
+  OnInit,
+  Output,
   SimpleChanges
 } from '@angular/core';
 import {Post} from '../../shared/interfaces/post';
@@ -15,7 +21,9 @@ import {Post} from '../../shared/interfaces/post';
 @Component({
   selector: 'app-post-item',
   templateUrl: './post-item.component.html',
-  styleUrls: ['./post-item.component.scss']
+  styleUrls: ['./post-item.component.scss'],
+  //стратегия поведения при изменении  (OnPush - изменяет только при изменении объекта)
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 
 export class PostItemComponent implements OnInit,

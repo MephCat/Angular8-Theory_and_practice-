@@ -14,7 +14,15 @@ export class ComponentInDetailsComponent implements OnInit {
   ];
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
+    setTimeout(() => {
+      console.log('Timeout');
+      this.posts[0] = {
+        title: 'Changed',
+        text: 'changed 2',
+        id: 33
+      };
+    }, 3000);
   }
   updatePostList(post: Post) {
     this.posts.unshift(post);
