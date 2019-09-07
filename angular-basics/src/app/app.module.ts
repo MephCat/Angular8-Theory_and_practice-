@@ -14,6 +14,7 @@ import { BasicsComponent } from './basics/basics.component';
 import { ComponentInDetailsComponent } from './component-in-details/component-in-details.component';
 import { PostFormComponent } from './component-in-details/post-form/post-form.component';
 import { PostItemComponent } from './component-in-details/post-item/post-item.component';
+import { DirectivesComponent } from './directives/directives.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { PostItemComponent } from './component-in-details/post-item/post-item.co
     BasicsComponent,
     ComponentInDetailsComponent,
     PostFormComponent,
-    PostItemComponent
+    PostItemComponent,
+    DirectivesComponent
   ],
   imports: [
     BrowserModule,
