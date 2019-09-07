@@ -15,9 +15,10 @@ button {
 }
 .post{
   width: 450px;
-  border: 1px solid rgb(0,0,0);
+  border: 1px solid rgba(0,0,0,.6);
   padding: 1rem;
-  margin-bottom: 1rem;
+  border-radius: 5px;
+  margin: 1rem;
 }
 .red{
   padding: 5px;
@@ -29,4 +30,25 @@ button {
   background-color: blue;
   font-weight: normal;
   color: #fff;
+}
+.form-block{
+  margin: 1rem;
+  border: 1px solid rgba(0,0,0,.6);
+  border-radius: 5px;
+  padding: 1rem;
+}
+.form-wrap{
+  display: flex;
+  flex-direction: column;
+}
+.mat-button.main-btn{
+  width: fit-content;
+  border-radius: 5px;
+  border: 1px solid rgba(0,0,0,.3);
+}
+.card{
+  border: 1px solid rgba(0,0,0,.6);
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 5px;
 }

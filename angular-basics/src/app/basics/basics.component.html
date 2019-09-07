@@ -15,11 +15,15 @@
   <h3>
     Binding
   </h3>
-  <input
-    type="text"
-    (input)="onInput($event)"
-    (blur)="onBlur(myInput.value)"
-    #myInput>
+  <mat-form-field class="example-full-width">
+    <input
+      matInput
+      type="text"
+      (input)="onInput($event)"
+      (blur)="onBlur(myInput.value)"
+      #myInput>
+  </mat-form-field>
+
   <p>
     <strong>
       {{inputVal}}
@@ -31,7 +35,9 @@
   <h3>
     Two way binding
   </h3>
-  <input type="text" [(ngModel)]="text">
+  <mat-form-field class="example-full-width">
+    <input matInput type="text" [(ngModel)]="text">
+  </mat-form-field>
   <p>
     {{text}}
   </p>
@@ -69,7 +75,9 @@
      [class.red]="backGroundToggle">
     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, reiciendis.
   </p>
-  <button (click)="backGroundToggle = !backGroundToggle">
+  <button mat-button
+          class="main-btn"
+          (click)="backGroundToggle = !backGroundToggle">
     Click me
   </button>
 </div>
@@ -78,10 +86,13 @@
   <h3>
     Directive(*ngIf)
   </h3>
-  <button (click)="toggle = !toggle">
+  <button mat-button
+          class="main-btn"
+          (click)="toggle = !toggle">
     click me
   </button>
-  <p class="red" *ngIf="toggle;  else blueP">
+  <p class="red"
+     *ngIf="toggle;  else blueP">
     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, dolorem.
   </p>
   <ng-template #blueP>
@@ -95,7 +106,9 @@
   <h3>
     Directive (*ngSwitch)
   </h3>
-  <button (click)="toggle = !toggle">
+  <button mat-button
+          class="main-btn"
+          (click)="toggle = !toggle">
     click me
   </button>
   <div [ngSwitch]="toggle">

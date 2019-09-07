@@ -16,7 +16,8 @@ import { Component, OnInit } from '@angular/core';
     .post4{
       padding: .5rem;
       border: 2px solid #000;
-      margin-bottom: 1rem;
+      border-radius: 5px;
+      margin: 1rem;
     }
     h2{
       font-size: 1rem;
