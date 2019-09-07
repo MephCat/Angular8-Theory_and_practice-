@@ -1,0 +1,144 @@
+<h1>
+  {{title}}
+</h1>
+<span>
+  <strong>
+    ng g c --skipTest
+  </strong>
+  No test file -  --spec false (--skipTest)
+</span>
+
+<app-post></app-post>
+<app-post4></app-post4>
+
+<div class="post">
+  <h3>
+    Binding
+  </h3>
+  <input
+    type="text"
+    (input)="onInput($event)"
+    (blur)="onBlur(myInput.value)"
+    #myInput>
+  <p>
+    <strong>
+      {{inputVal}}
+    </strong>
+  </p>
+</div>
+
+<div class="post">
+  <h3>
+    Two way binding
+  </h3>
+  <input type="text" [(ngModel)]="text">
+  <p>
+    {{text}}
+  </p>
+</div>
+<div class="post">
+  <h3>
+    Directive(ngStyle)
+  </h3>
+  <button style="color: #fff; display: flex; align-items: center; justify-content: center"
+          [ngStyle]="{
+          height: '200px',
+          width: '200px',
+          borderRadius: '50%',
+          border: '2px solid blue',
+          background: backGroundToggle ? 'red' : 'grey'
+        }"
+          (click)="backGroundToggle = !backGroundToggle">
+    <span >
+      Click me
+    </span>
+  </button>
+</div>
+
+<div class="post">
+  <h3>
+    Directive(ngClass)
+  </h3>
+  <p [ngClass]="{
+        red: backGroundToggle,
+        blue: !backGroundToggle
+      }">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, optio.
+  </p>
+  <p [class.blue]="!backGroundToggle"
+     [class.red]="backGroundToggle">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, reiciendis.
+  </p>
+  <button (click)="backGroundToggle = !backGroundToggle">
+    Click me
+  </button>
+</div>
+
+<div class="post">
+  <h3>
+    Directive(*ngIf)
+  </h3>
+  <button (click)="toggle = !toggle">
+    click me
+  </button>
+  <p class="red" *ngIf="toggle;  else blueP">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, dolorem.
+  </p>
+  <ng-template #blueP>
+    <p class="blue">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis, in.
+    </p>
+  </ng-template>
+</div>
+
+<div class="post">
+  <h3>
+    Directive (*ngSwitch)
+  </h3>
+  <button (click)="toggle = !toggle">
+    click me
+  </button>
+  <div [ngSwitch]="toggle">
+    <p class="red"
+       *ngSwitchCase="true">
+      Lorem ipsum.
+    </p>
+    <p class="blue"
+       *ngSwitchCase="false">
+      Lorem ipsum dolor sit.
+    </p>
+    <p *ngSwitchDefault>
+      Lorem ipsum dolor sit.
+    </p>
+  </div>
+</div>
+<div class="post">
+  <h3>
+    Directive(*ngFor)
+  </h3>
+  <p *ngFor="let num of arr; let idx = index ;">
+    {{num}}, {{1+idx}}
+  </p>
+
+  <div class="postItem" *ngFor="let post of postList">
+    <p>{{post.title}} <strong> {{post.author}}</strong></p>
+    <ul>
+      <li *ngFor="let commentItem of post.comment">
+        <p>
+          {{commentItem.name}}
+        </p>
+        <strong>
+          {{commentItem.text}}
+        </strong>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="post">
+  <h3>
+    Pipes
+  </h3>
+  <p>
+    {{ now | date: 'long' | uppercase }}
+  </p>
+</div>
