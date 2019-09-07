@@ -1,4 +1,15 @@
-import {Component, ContentChild, ElementRef, Input, OnInit} from '@angular/core';
+import {
+  AfterContentChecked,
+  AfterContentInit, AfterViewChecked, AfterViewInit,
+  Component,
+  ContentChild,
+  DoCheck,
+  ElementRef, EventEmitter,
+  Input,
+  OnChanges, OnDestroy,
+  OnInit, Output,
+  SimpleChanges
+} from '@angular/core';
 import {Post} from '../../shared/interfaces/post';
 
 @Component({
@@ -6,14 +17,49 @@ import {Post} from '../../shared/interfaces/post';
   templateUrl: './post-item.component.html',
   styleUrls: ['./post-item.component.scss']
 })
-export class PostItemComponent implements OnInit {
 
-  @Input('post') post: Post;
+export class PostItemComponent implements OnInit,
+                                          OnChanges,
+                                          DoCheck,
+                                          AfterContentInit,
+                                          AfterContentChecked,
+                                          AfterViewInit,
+                                          AfterViewChecked,
+                                          OnDestroy{
+
+  @Input() post: Post;
+  @Output() onRemove = new EventEmitter<number>();
   @ContentChild('info', {static: true}) infoRef: ElementRef;
-  constructor() { }
-
+  constructor() {
+    console.log('constructor');
+  }
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log('ngOnChanges' +  changes);
+  }
   ngOnInit() {
-    console.log(this.infoRef.nativeElement);
+    console.log('ngOninit');
+    // console.log(this.infoRef.nativeElement);
+  }
+  ngDoCheck(): void {
+    console.log('DoCheck');
+  }
+  ngAfterContentInit(): void {
+    console.log('AfterContentInit');
+  }
+  ngAfterContentChecked(): void {
+    console.log('AfterContentChecked');
+  }
+  ngAfterViewInit(): void {
+    console.log('AfterViewInit');
+  }
+  ngAfterViewChecked(): void {
+    console.log('AfterViewChecked');
+  }
+  ngOnDestroy(): void {
+    console.log('OnDestroy');
   }
 
+  remove() {
+    this.onRemove.emit(this.post.id);
+  }
 }

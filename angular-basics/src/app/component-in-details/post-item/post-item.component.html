@@ -5,5 +5,9 @@
   <p>
     {{post.text}}
   </p>
+  <button mat-button
+          class="main-btn"(click)="remove()">
+    &times;
+  </button>
   <ng-content></ng-content>
 </div>
