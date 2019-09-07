@@ -15,6 +15,13 @@ import { ComponentInDetailsComponent } from './component-in-details/component-in
 import { PostFormComponent } from './component-in-details/post-form/post-form.component';
 import { PostItemComponent } from './component-in-details/post-item/post-item.component';
 import { DirectivesComponent } from './directives/directives.component';
+import { PipesComponent } from './pipes/pipes.component';
+import { ServicesComponent } from './services/services.component';
+import { FormsValidationsComponent } from './forms-validations/forms-validations.component';
+import { HttpClientComponent } from './http-client/http-client.component';
+import { RoutingComponent } from './routing/routing.component';
+import { ModulesComponent } from './modules/modules.component';
+import { AddFeaturesComponent } from './add-features/add-features.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +32,14 @@ import { DirectivesComponent } from './directives/directives.component';
     ComponentInDetailsComponent,
     PostFormComponent,
     PostItemComponent,
-    DirectivesComponent
+    DirectivesComponent,
+    PipesComponent,
+    ServicesComponent,
+    FormsValidationsComponent,
+    HttpClientComponent,
+    RoutingComponent,
+    ModulesComponent,
+    AddFeaturesComponent
   ],
   imports: [
     BrowserModule,
