@@ -16,5 +16,8 @@ export class ComponentInDetailsComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  updatePostList(post: Post) {
+    this.posts.unshift(post);
+    console.log(post);
+  }
 }

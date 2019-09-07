@@ -1,6 +1,8 @@
 <h2>Component in details</h2>
 
-<app-post-form></app-post-form>
+<app-post-form
+  (onAdd)="updatePostList($event)"
+></app-post-form>
 
 <app-post-item
   *ngFor="let post of posts"
