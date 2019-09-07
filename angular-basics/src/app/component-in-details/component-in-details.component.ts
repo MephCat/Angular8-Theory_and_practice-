@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Post} from '../shared/interfaces/post';
 
 @Component({
   selector: 'app-component-in-details',
@@ -7,6 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ComponentInDetailsComponent implements OnInit {
 
+  posts: Post[] = [
+    {title: 'Post 1', text: 'text post 1'},
+    {title: 'Post 2', text: 'text post 2'}
+  ];
   constructor() { }
 
   ngOnInit() {
