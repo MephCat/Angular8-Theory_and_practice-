@@ -16,6 +16,8 @@ import {
   Output,
   SimpleChanges
 } from '@angular/core';
+import {ViewEncapsulation} from '@angular/core';
+
 import {Post} from '../../shared/interfaces/post';
 
 @Component({
@@ -23,7 +25,9 @@ import {Post} from '../../shared/interfaces/post';
   templateUrl: './post-item.component.html',
   styleUrls: ['./post-item.component.scss'],
   //стратегия поведения при изменении  (OnPush - изменяет только при изменении объекта)
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  //определяет стили на глобальные
+  encapsulation: ViewEncapsulation.None
 })
 
 export class PostItemComponent implements OnInit,
@@ -33,7 +37,7 @@ export class PostItemComponent implements OnInit,
                                           AfterContentChecked,
                                           AfterViewInit,
                                           AfterViewChecked,
-                                          OnDestroy{
+                                          OnDestroy {
 
   @Input() post: Post;
   @Output() onRemove = new EventEmitter<number>();
