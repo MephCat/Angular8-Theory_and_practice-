@@ -27,6 +27,8 @@ import { IfnotDirective } from './shared/directives/ifnot.directive';
 import { MultByPipe } from './shared/pipes/mult-by.pipe';
 import { ExMarksPipe } from './shared/pipes/ex-marks.pipe';
 import { FilterPipe } from './shared/pipes/filter.pipe';
+import {CounterService} from './shared/services/counter.service';
+import { CounterComponent } from './services/counter/counter.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +51,8 @@ import { FilterPipe } from './shared/pipes/filter.pipe';
     IfnotDirective,
     MultByPipe,
     ExMarksPipe,
-    FilterPipe
+    FilterPipe,
+    CounterComponent
   ],
   imports: [
     BrowserModule,
@@ -60,7 +63,9 @@ import { FilterPipe } from './shared/pipes/filter.pipe';
     MatInputModule,
     MatButtonModule
   ],
-  providers: [],
+  providers: [
+    CounterService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

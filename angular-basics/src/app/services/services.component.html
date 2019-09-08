@@ -1,3 +1,28 @@
 <h1>
   Services
 </h1>
+
+<div class="post">
+  <h2>
+    Counter Service: {{counterService.counter}}
+  </h2>
+  <button mat-button class="main-btn" (click)="counterService.increase()">
+    +
+  </button>
+  <button mat-button class="main-btn" (click)="counterService.decress()">
+    -
+  </button>
+</div>
+<div class="post">
+  <h2>
+    Counter Service: {{localCounter.counter}}
+  </h2>
+  <button mat-button class="main-btn" (click)="localCounter.increase()">
+    +
+  </button>
+  <button mat-button class="main-btn" (click)="localCounter.decress()">
+    -
+  </button>
+</div>
+<app-counter></app-counter>
+
