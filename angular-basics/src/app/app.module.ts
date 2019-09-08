@@ -24,6 +24,9 @@ import { ModulesComponent } from './modules/modules.component';
 import { AddFeaturesComponent } from './add-features/add-features.component';
 import { StyleDirective } from './shared/directives/style.directive';
 import { IfnotDirective } from './shared/directives/ifnot.directive';
+import { MultByPipe } from './shared/pipes/mult-by.pipe';
+import { ExMarksPipe } from './shared/pipes/ex-marks.pipe';
+import { FilterPipe } from './shared/pipes/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -43,7 +46,10 @@ import { IfnotDirective } from './shared/directives/ifnot.directive';
     ModulesComponent,
     AddFeaturesComponent,
     StyleDirective,
-    IfnotDirective
+    IfnotDirective,
+    MultByPipe,
+    ExMarksPipe,
+    FilterPipe
   ],
   imports: [
     BrowserModule,

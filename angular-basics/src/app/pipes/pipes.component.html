@@ -1,3 +1,133 @@
 <h1>
   Pipes
 </h1>
+
+<div class="post">
+  <h2>
+    Pipe number
+  </h2>
+  <p>
+    {{e | number: '1.1-5' }}
+  </p>
+  <p>
+    {{e | number: '3.1-2' }}
+  </p>
+</div>
+
+<div class="post">
+  <h2>
+    Pipe string
+  </h2>
+  <p>
+    {{str | uppercase}}
+  </p>
+  <p>
+    {{str | lowercase}}
+  </p>
+  <p>
+    {{str | titlecase}}
+  </p>
+  <p>
+    {{str | slice: 0:5 }}
+  </p>
+</div>
+<div class="post">
+  <h2>
+    Pipe search
+  </h2>
+  <p>
+    API: Filter -> pipe
+  </p>
+</div>
+<div class="post">
+  <h2>
+    Pipe date
+  </h2>
+  <p>
+    {{date | date: 'HH:mm dd-MM-yyyy'}}
+  </p>
+</div>
+<div class="post">
+  <h2>
+    Pipe more
+  </h2>
+  <p>
+    {{float}}
+  </p>
+  <p>
+    {{float | currency}}
+  </p>
+  <p>
+    {{float | percent}}
+  </p>
+  <pre>
+    {{obj | json}}
+  </pre>
+</div>
+<div class="post">
+  <h2>
+    Custom pipe
+  </h2>
+  <p>
+    {{ 10 | multBy}}
+  </p>
+  <p>
+    {{ 10 | multBy: 2}}
+  </p>
+  <p>
+    {{ 10 | multBy: 3}}
+  </p>
+  <p>
+    {{ 10 | multBy: 5}}
+  </p>
+  <p>
+    {{ 10 | multBy: 8}}
+  </p>
+  <p>
+    {{ 10 | multBy: 13}}
+  </p>
+</div>
+<div class="post">
+  <p>
+    {{ 'Hello World           ' | exMarks}}
+  </p>
+</div>
+
+<div class="posts-wrap">
+  <div class="post">
+    <h2>Search pipe</h2>
+    <input type="text" [(ngModel)]="search">
+    <button mat-button (click)="searchField = 'title'" class="main-btn">
+      Title
+    </button>
+    <button mat-button (click)="searchField = 'text'" class="main-btn">
+      Text
+    </button>
+  </div>
+  <div class="post" *ngFor="let post of posts | filter: search:searchField">
+    <h2>
+      {{post.title}}
+    </h2>
+    <p>
+      {{post.text}}
+    </p>
+  </div>
+</div>
+<div class="post">
+  <button class="main-btn" mat-button (click)="addPost()">
+    New Post
+  </button>
+</div>
+
+<div class="post">
+  <h2>
+    Pipe Async
+  </h2>
+  <p>
+    wait for it...
+    {{promise | async}}
+  </p>
+  <p>
+    {{dateN$ | async | date: 'HH:mm:ss dd-MM-yyyy'}}
+  </p>
+</div>
