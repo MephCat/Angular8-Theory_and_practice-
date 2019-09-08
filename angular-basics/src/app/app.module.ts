@@ -22,6 +22,8 @@ import { HttpClientComponent } from './http-client/http-client.component';
 import { RoutingComponent } from './routing/routing.component';
 import { ModulesComponent } from './modules/modules.component';
 import { AddFeaturesComponent } from './add-features/add-features.component';
+import { StyleDirective } from './shared/directives/style.directive';
+import { IfnotDirective } from './shared/directives/ifnot.directive';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,9 @@ import { AddFeaturesComponent } from './add-features/add-features.component';
     HttpClientComponent,
     RoutingComponent,
     ModulesComponent,
-    AddFeaturesComponent
+    AddFeaturesComponent,
+    StyleDirective,
+    IfnotDirective
   ],
   imports: [
     BrowserModule,

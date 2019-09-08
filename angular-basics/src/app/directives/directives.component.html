@@ -1,3 +1,44 @@
 <h1>
   Directives
 </h1>
+
+<div class="post"
+     [appStyle]="'red'"
+     fontWeight="bold"
+     [dStyles]="{boxShadow: '5px 5px 5px 5px rgba(0,0,0,.6)'}">
+
+  <p >
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, eius!
+  </p>
+</div>
+
+<div class="post"
+     [appStyle]="'blue'"
+     fontWeight="bold"
+     [dStyles]="{boxShadow: '0px 5px 5px 0px rgba(0,0,0,.6)'}">
+  <p >
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, eius!
+  </p>
+</div>
+
+<div class="post">
+  <h2>
+    Structur directive
+  </h2>
+
+  <p *ngIf="!isVisible">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, eius!
+  </p>
+  <button class="main-btn" mat-button (click)="isVisible = !isVisible">
+    Click me
+  </button>
+
+
+  <p *appIfnot="isVisible">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, eius!
+  </p>
+  <button class="main-btn" mat-button (click)="isVisible = !isVisible">
+    Click me
+  </button>
+
+</div>
