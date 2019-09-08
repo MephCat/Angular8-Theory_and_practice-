@@ -29,6 +29,8 @@ import { ExMarksPipe } from './shared/pipes/ex-marks.pipe';
 import { FilterPipe } from './shared/pipes/filter.pipe';
 import {CounterService} from './shared/services/counter.service';
 import { CounterComponent } from './services/counter/counter.component';
+import { BasicRxjsComponent } from './basic-rxjs/basic-rxjs.component';
+import { TsForAngularComponent } from './ts-for-angular/ts-for-angular.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +54,9 @@ import { CounterComponent } from './services/counter/counter.component';
     MultByPipe,
     ExMarksPipe,
     FilterPipe,
-    CounterComponent
+    CounterComponent,
+    BasicRxjsComponent,
+    TsForAngularComponent
   ],
   imports: [
     BrowserModule,
