@@ -1,0 +1,14 @@
+<div class="post">
+  <button mat-button
+          class="main-btn toggler"
+          [class.active]="atate === 'on' "
+          (click)="setState('on')">
+    on
+  </button>
+  <button mat-button
+          class="main-btn toggler"
+          [class.active]="atate === 'off'"
+          (click)="setState('off')">
+    off
+  </button>
+</div>

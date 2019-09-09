@@ -31,6 +31,7 @@ import {CounterService} from './shared/services/counter.service';
 import { CounterComponent } from './services/counter/counter.component';
 import { BasicRxjsComponent } from './basic-rxjs/basic-rxjs.component';
 import { TsForAngularComponent } from './ts-for-angular/ts-for-angular.component';
+import { SwitchComponent } from './forms-validations/switch/switch.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { TsForAngularComponent } from './ts-for-angular/ts-for-angular.component
     FilterPipe,
     CounterComponent,
     BasicRxjsComponent,
-    TsForAngularComponent
+    TsForAngularComponent,
+    SwitchComponent
   ],
   imports: [
     BrowserModule,

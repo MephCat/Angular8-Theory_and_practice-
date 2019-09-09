@@ -8,7 +8,7 @@ import {MyValidators} from '../shared/my.validators';
   styleUrls: ['./forms-validations.component.scss']
 })
 export class FormsValidationsComponent implements OnInit {
-
+  sppState = 'on';
   form: FormGroup;
   constructor() { }
 
@@ -53,5 +53,8 @@ export class FormsValidationsComponent implements OnInit {
     const control = new FormControl('', Validators.required);
     // (<FormArray> this.form.get('skills'))
     (this.form.get('skills') as FormArray).push(control);
+  }
+  handelChange() {
+    console.log(this.sppState);
   }
 }
