@@ -6,7 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ts-for-angular.component.scss']
 })
 export class TsForAngularComponent implements OnInit {
-
   constructor() { }
 
   ngOnInit() {
