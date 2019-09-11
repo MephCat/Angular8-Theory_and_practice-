@@ -1,42 +1,76 @@
-<h1>
-  {{title}}
-</h1>
+<header>
+  <h1>
+    {{title}}
+  </h1>
+</header>
 
-<mat-tab-group>
-  <mat-tab label="Basics" class="body-container">
-    <app-basics></app-basics>
-  </mat-tab>
-  <mat-tab label="Components in detail" class="body-container">
-    <app-component-in-details></app-component-in-details>
-  </mat-tab>
-  <mat-tab label="Directives" class="body-container">
-    <app-directives></app-directives>
-  </mat-tab>
-  <mat-tab label="Pipes" class="body-container">
-    <app-pipes></app-pipes>
-  </mat-tab>
-  <mat-tab label="Services" class="body-container">
-    <app-services></app-services>
-  </mat-tab>
-  <mat-tab label="Form and Validations" class="body-container">
-    <app-forms-validations></app-forms-validations>
-  </mat-tab>
-  <mat-tab label="HttpClient" class="body-container">
-    <app-http-client></app-http-client>
-  </mat-tab>
-  <mat-tab label="Routing" class="body-container">
-    <app-routing></app-routing>
-  </mat-tab>
-  <mat-tab label="Modules" class="body-container">
-    <app-modules></app-modules>
-  </mat-tab>
-  <mat-tab label="Additional features" class="body-container">
-    <app-add-features></app-add-features>
-  </mat-tab>
-  <mat-tab label="TS for Angular" class="body-container">
-    <app-ts-for-angular></app-ts-for-angular>
-  </mat-tab>
-  <mat-tab label="Basic RxJS" class="body-container">
-    <app-basic-rxjs></app-basic-rxjs>
-  </mat-tab>
-</mat-tab-group>
+<div class="container-page">
+  <div class="left-menu">
+    <ul>
+      <li>
+        <a routerLink="/" mat-button>
+          Basics
+        </a>
+      </li>
+      <li>
+        <a routerLink="component-in-details" mat-button>
+          Components in detail
+        </a>
+      </li>
+      <li>
+        <a routerLink="directives" mat-button>
+          Directives
+        </a>
+      </li>
+      <li>
+        <a routerLink="pipes" mat-button>
+          Pipes
+        </a>
+      </li>
+      <li>
+        <a routerLink="services" mat-button>
+          Services
+        </a>
+      </li>
+      <li>
+        <a routerLink="forms-validations" mat-button>
+          Form and Validations
+        </a>
+      </li>
+      <li>
+        <a routerLink="http-client" mat-button>
+          HttpClient
+        </a>
+      </li>
+      <li>
+        <a routerLink="routing" mat-button>
+          Routing
+        </a>
+      </li>
+      <li>
+        <a routerLink="modules" mat-button>
+          Modules
+        </a>
+      </li>
+      <li>
+        <a routerLink="add-features" mat-button>
+          Additional features
+        </a>
+      </li>
+      <li>
+        <a routerLink="ts-for-angular" mat-button>
+          TS for Angular
+        </a>
+      </li>
+      <li>
+        <a routerLink="basic-rxjs" mat-button>
+          Basic RxJS
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="page-wrap">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
