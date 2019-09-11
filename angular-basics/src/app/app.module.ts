@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {NgModule, Provider} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatTabsModule} from '@angular/material/tabs';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -32,6 +32,15 @@ import { CounterComponent } from './services/counter/counter.component';
 import { BasicRxjsComponent } from './basic-rxjs/basic-rxjs.component';
 import { TsForAngularComponent } from './ts-for-angular/ts-for-angular.component';
 import { SwitchComponent } from './forms-validations/switch/switch.component';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+import {AuthInterceptor} from './http-client/auth.interceptor';
+
+const INTRCEPTOR_PROVIDER: Provider = {
+  provide: HTTP_INTERCEPTORS,
+  useClass: AuthInterceptor,
+  multi: true
+};
+
 
 @NgModule({
   declarations: [
@@ -68,10 +77,12 @@ import { SwitchComponent } from './forms-validations/switch/switch.component';
     BrowserAnimationsModule,
     MatInputModule,
     MatButtonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [
-    CounterService
+    CounterService,
+    INTRCEPTOR_PROVIDER
   ],
   bootstrap: [AppComponent]
 })

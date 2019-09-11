@@ -1,1 +1,42 @@
 <h1>HttpClient</h1>
+
+<div class="post">
+  <mat-form-field class="example-full-width">
+    <input matInput
+           placeholder="Favorite food"
+           value="Name"
+           [(ngModel)]="todoTile">
+  </mat-form-field>
+  <button mat-button (click)="addTodo()" class="main-btn">
+    Добавить
+  </button>
+  <button (click)="fetchTodos()" mat-button class="main-btn">
+    Загрузить
+  </button>
+</div>
+
+<div *ngIf="!loading; else loadingBlock">
+  <div *ngIf="todos.length; else noTodos">
+    <div class="post" *ngFor="let todo of todos">
+      <h2 [class.completed]="todo.completed">
+        {{todo.title | titlecase}}
+      </h2>
+      <div>
+        <button mat-button class="main-btn" (click)="removeTodo(todo.id)">
+          Удалить
+        </button>
+        <button mat-button
+                class="main-btn"
+                [disabled]="todo.completed" (click)="completeTodo(todo.id)">
+          Завершить
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<ng-template #loadingBlock>
+  <p>Loading</p>
+</ng-template>
+<ng-template #noTodos>
+  <p>No post</p>
+</ng-template>
