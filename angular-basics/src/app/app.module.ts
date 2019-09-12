@@ -34,6 +34,12 @@ import { TsForAngularComponent } from './ts-for-angular/ts-for-angular.component
 import { SwitchComponent } from './forms-validations/switch/switch.component';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {AuthInterceptor} from './http-client/auth.interceptor';
+import { AboutComponent } from './routing/about/about.component';
+import { PostsComponent } from './routing/posts/posts.component';
+import { HomeComponent } from './routing/home/home.component';
+import { PostRoutingComponent } from './routing/post-routing/post-routing.component';
+import { ExtraComponent } from './routing/about/extra/extra.component';
+import { ErrorPageComponent } from './error-page/error-page.component';
 
 const INTRCEPTOR_PROVIDER: Provider = {
   provide: HTTP_INTERCEPTORS,
@@ -67,7 +73,13 @@ const INTRCEPTOR_PROVIDER: Provider = {
     CounterComponent,
     BasicRxjsComponent,
     TsForAngularComponent,
-    SwitchComponent
+    SwitchComponent,
+    AboutComponent,
+    PostsComponent,
+    HomeComponent,
+    PostRoutingComponent,
+    ExtraComponent,
+    ErrorPageComponent
   ],
   imports: [
     BrowserModule,

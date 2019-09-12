@@ -64,4 +64,7 @@ export class TodosService {
       responseType: 'json'
     });
   }
+  getPost(id) {
+    return this.http.get(`https://jsonplaceholder.typicode.com/todos/${id}`);
+  }
 }

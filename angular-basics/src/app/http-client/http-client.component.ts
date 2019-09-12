@@ -38,6 +38,7 @@ export class HttpClientComponent implements OnInit {
       .subscribe(
       todos => {
         this.todos = todos;
+        console.log(this.todos);
         this.loading = false;
         console.log(todos);
       },error => {

@@ -78,3 +78,39 @@ small{
     list-style: none;
   }
 }
+.left-menu{
+  width: 200px;
+  padding: 10px;
+}
+.page-wrap{
+  width: calc(100% - 200px);
+  padding: 10px;
+  border: 1px solid rgba(0,0,0,.3);
+  border-radius: 5px;
+}
+.container-routing{
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  .header-routing{
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    background-color: aquamarine;
+    justify-content: space-between;
+    ul{
+      list-style: none;
+      display: flex;
+      .active a{
+        color: red;
+        font-size: 20px;
+      }
+    }
+  }
+  .routing-wrap{
+    width: 100%;
+
+  }
+}

@@ -12,6 +12,13 @@ import {PipesComponent} from './pipes/pipes.component';
 import {RoutingComponent} from './routing/routing.component';
 import {ServicesComponent} from './services/services.component';
 import {TsForAngularComponent} from './ts-for-angular/ts-for-angular.component';
+import {AboutComponent} from './routing/about/about.component';
+import {PostsComponent} from './routing/posts/posts.component';
+import {HomeComponent} from './routing/home/home.component';
+import {PostRoutingComponent} from './routing/post-routing/post-routing.component';
+import {ExtraComponent} from './routing/about/extra/extra.component';
+import {ErrorPageComponent} from './error-page/error-page.component';
+import {AuthGuerd} from './routing/auth.guard';
 
 
 const routes: Routes = [
@@ -24,9 +31,20 @@ const routes: Routes = [
   {path: 'http-client', component: HttpClientComponent},
   {path: 'modules', component: ModulesComponent},
   {path: 'pipes', component: PipesComponent},
-  {path: 'routing', component: RoutingComponent},
   {path: 'services', component: ServicesComponent},
-  {path: 'ts-for-angular', component: TsForAngularComponent}
+  {path: 'ts-for-angular', component: TsForAngularComponent},
+  //for routing component
+  {path: 'routing', component: RoutingComponent, children:[
+      {path: 'home', component: HomeComponent},
+      {path: 'about', component: AboutComponent, canActivateChild: [AuthGuerd], children: [
+          {path: 'extra', component: ExtraComponent}
+        ]},
+      {path: 'posts', component: PostsComponent, canActivate: [AuthGuerd]},
+      {path: 'posts/:id', component: PostRoutingComponent}
+    ]
+  },
+  {path: 'error', component: ErrorPageComponent},
+  {path: '**', redirectTo: 'error' }
 ];
 
 @NgModule({
