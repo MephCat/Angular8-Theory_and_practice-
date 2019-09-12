@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import {Routes, RouterModule, PreloadAllModules} from '@angular/router';
 import {BasicsComponent} from './basics/basics.component';
 import {AddFeaturesComponent} from './add-features/add-features.component';
 import {BasicRxjsComponent} from './basic-rxjs/basic-rxjs.component';
@@ -19,7 +19,7 @@ import {PostRoutingComponent} from './routing/post-routing/post-routing.componen
 import {ExtraComponent} from './routing/about/extra/extra.component';
 import {ErrorPageComponent} from './error-page/error-page.component';
 import {AuthGuerd} from './routing/auth.guard';
-
+import {HomePageComponent} from './modules/home-page/home-page.component';
 
 const routes: Routes = [
   {path: '', component: BasicsComponent},
@@ -29,7 +29,6 @@ const routes: Routes = [
   {path: 'directives', component: DirectivesComponent},
   {path: 'forms-validations', component: FormsValidationsComponent},
   {path: 'http-client', component: HttpClientComponent},
-  {path: 'modules', component: ModulesComponent},
   {path: 'pipes', component: PipesComponent},
   {path: 'services', component: ServicesComponent},
   {path: 'ts-for-angular', component: TsForAngularComponent},
@@ -43,12 +42,20 @@ const routes: Routes = [
       {path: 'posts/:id', component: PostRoutingComponent}
     ]
   },
+  {path: 'modules', component: ModulesComponent, children:[
+      {path: '', component: HomePageComponent},
+      {path: 'home', component: HomePageComponent},
+      {path: 'about', loadChildren: './modules/about-page/about-page.module#AboutPageModule'},
+    ]},
   {path: 'error', component: ErrorPageComponent},
   {path: '**', redirectTo: 'error' }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {
+    // загрузка дочерних модулей в фоновом режиме
+    preloadingStrategy: PreloadAllModules
+  })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

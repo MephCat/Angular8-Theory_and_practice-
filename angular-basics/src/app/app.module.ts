@@ -38,8 +38,9 @@ import { AboutComponent } from './routing/about/about.component';
 import { PostsComponent } from './routing/posts/posts.component';
 import { HomeComponent } from './routing/home/home.component';
 import { PostRoutingComponent } from './routing/post-routing/post-routing.component';
-import { ExtraComponent } from './routing/about/extra/extra.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
+import {SharedModule} from './shared/shared.module';
+import {HomePageComponent} from './modules/home-page/home-page.component';
 
 const INTRCEPTOR_PROVIDER: Provider = {
   provide: HTTP_INTERCEPTORS,
@@ -78,7 +79,6 @@ const INTRCEPTOR_PROVIDER: Provider = {
     PostsComponent,
     HomeComponent,
     PostRoutingComponent,
-    ExtraComponent,
     ErrorPageComponent
   ],
   imports: [
@@ -90,7 +90,8 @@ const INTRCEPTOR_PROVIDER: Provider = {
     MatInputModule,
     MatButtonModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    SharedModule
   ],
   providers: [
     CounterService,

@@ -1,0 +1,10 @@
+<h1>About-page!</h1>
+<button mat-button (click)="read = true">Mark as read</button>
+
+<p [ngStyle]="{color: read ? 'blue' : null}" >
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, quaerat.
+</p>
+<router-outlet></router-outlet>
+
+<p><a [routerLink]="['extra']">Show more...</a></p>
+<p><a [routerLink]="['']">Hide more...</a></p>
