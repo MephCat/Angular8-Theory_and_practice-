@@ -41,6 +41,10 @@ import { PostRoutingComponent } from './routing/post-routing/post-routing.compon
 import { ErrorPageComponent } from './error-page/error-page.component';
 import {SharedModule} from './shared/shared.module';
 import {HomePageComponent} from './modules/home-page/home-page.component';
+import { ModalComponent } from './add-features/modal/modal.component';
+import {RefDirective} from './add-features/ref.directive';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 const INTRCEPTOR_PROVIDER: Provider = {
   provide: HTTP_INTERCEPTORS,
@@ -79,7 +83,9 @@ const INTRCEPTOR_PROVIDER: Provider = {
     PostsComponent,
     HomeComponent,
     PostRoutingComponent,
-    ErrorPageComponent
+    ErrorPageComponent,
+    ModalComponent,
+    RefDirective
   ],
   imports: [
     BrowserModule,
@@ -91,12 +97,14 @@ const INTRCEPTOR_PROVIDER: Provider = {
     MatButtonModule,
     ReactiveFormsModule,
     HttpClientModule,
-    SharedModule
+    SharedModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
     CounterService,
     INTRCEPTOR_PROVIDER
   ],
+  entryComponents: [ModalComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
